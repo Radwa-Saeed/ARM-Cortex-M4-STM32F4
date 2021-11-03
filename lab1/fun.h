@@ -49,3 +49,12 @@ int calculat(int num1, int num2, int num3)
     printf("SMALLEXT NUM IS ... %d \n", min);
     return 0;
 }
+
+int time(int seconds)
+{
+    int h, m, s;
+    h = seconds / 3600;
+    m = (seconds - (h * 3600)) / 60;
+    s = (seconds - (h * 3600) - (m * 60));
+    printf("Time h:m:s ... %d:%d:%d", h, m, s);
+}

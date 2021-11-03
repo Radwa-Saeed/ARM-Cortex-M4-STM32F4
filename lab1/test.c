@@ -19,13 +19,10 @@ int main(void)
     // calculat(num1, num2, num3);
 
     // ########### calculate time from seconds
-    // int h, m, s, total;
+    // int seconds;
     // printf("PLEASE ENTER THE TOTAL TIME ELAPSED IN SECONDS ... ");
-    // scanf("%d", &total);
-    // h = total / 3600;
-    // m = (total - (h * 3600)) / 60;
-    // s = (total - (h * 3600) - (m * 60));
-    // printf("Time %d:%d:%d", h, m, s);
+    // scanf("%d", &seconds);
+    // time(seconds);
 
     return 0;
 };
