@@ -1,5 +1,9 @@
 /.vscode
 /.metadata
+/.settings
+/Debug
+/Drivers
+/Startup
 # Prerequisites
 *.d
 
