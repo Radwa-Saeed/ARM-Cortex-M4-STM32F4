@@ -6,20 +6,26 @@
 #include "GPIO.h"
 #include "Keypad.h"
 
-extern unsigned char PressedKey;
-extern unsigned char state;
 unsigned char sevenSegHex[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66,0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+void SevenSeg_INIT(void);
+
 int main(void) {
 	KeyPad_INIT();
-	// 7 SEG INITIALIZATION AS OP
-	GPIO_EnableClock('A');
-	for (unsigned char i = 0; i < 7; i++) {GPIO_Init('A', i, OUTPUT, PUSH_PULL); }
+	SevenSeg_INIT();
+
   while(1){
 	  KeyPad_Manage();
   }
   return 0;
 }
+
+// 7 SEG INITIALIZATION AS OP
+void SevenSeg_INIT(void){
+		GPIO_EnableClock('A');
+		for (unsigned char i = 0; i < 7; i++) {GPIO_Init('A', i, OUTPUT, PUSH_PULL); }
+}
+
 void KeyPad_Callouts_KeyPressNotificaton(void){
-	for (int i = 0; i < 7; i++) {GPIO_WritePin('A', i, (sevenSegHex[PressedKey] & (1 << i)) >> i);}
-	//state = RELEASED;
+	unsigned char PressedKey= KeyPad_Getkey();
+	for (unsigned char i = 0; i < 7; i++) {GPIO_WritePin('A', i, (sevenSegHex[PressedKey] & (1 << i)) >> i);}
 }

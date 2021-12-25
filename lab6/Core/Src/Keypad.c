@@ -5,6 +5,11 @@
  */
 #include "GPIO.h"
 #include "Keypad.h"
+//#include "stm32f401cc_interface.h"
+
+unsigned char state = RELEASED; // 1
+unsigned char keys[4][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 0, 0, 0 } };
+unsigned char keyValue ;
 
 // KEYPAD INITIALIZATION 1,2,3 => OP / A,B,C,D => IP
 void KeyPad_INIT(void) {
@@ -17,44 +22,33 @@ void KeyPad_INIT(void) {
 	}
 }
 
-//unsigned char State = 0;
-char KeyPad_Getkey(int row, int col) {
-	char keys[4][3] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 0, 0, 0 } };
-	char keyValue = keys[row][col];
-	return keyValue;
-}
-
-unsigned char state = RELEASED; //1
-unsigned char PressedKey;
-
 void KeyPad_Manage(void) {
-	int row, col;
-	if (state == RELEASED) {
-	for (col = 0; col < 3; col++) {
-		for (unsigned char i = 0; i < 3; i++) {
-			GPIO_WritePin(1, i, 1);
-		}
-		GPIO_WritePin(1, col, 0);
-			for (row = 3; row < 7; row++) {
-				if (GPIO_ReadPin(1, row) == 0) {
-					for (unsigned int i = 0; i < 3000; i++) {
-					}
-					if (GPIO_ReadPin(1, row) == 0) {
-						state = PRESSED;
-						PressedKey = KeyPad_Getkey(row - 3, col);
+	unsigned char row, col;
+	if(state == RELEASED){
+		for(col=0;col<3;col++){
+			GPIO_WritePin(1, col, 0);
+			for(row=0;row<4;row++){
+				if(GPIO_ReadPin(1, row+3)==0){
+					for (unsigned int i = 0; i < 5000; i++) {} //delay
+					if(GPIO_ReadPin(1, row+3)==0){
+						keyValue = keys[row][col];
+						state=PRESSED;
 						KeyPad_Callouts_KeyPressNotificaton();
 					}
 				}
-				if (GPIO_ReadPin(1, row) == 1) {
-					for (unsigned int i = 0; i < 3000; i++) {
-					}
-					if (GPIO_ReadPin(1, row) == 1) {
-						state = RELEASED;
-					}
-				}
-			}
 
+			}
+			GPIO_WritePin(1, col, 1);
 		}
 	}
 }
 
+unsigned char KeyPad_Getkey(void) {
+	if(state == PRESSED){
+		state = RELEASED;
+		return keyValue;
+	}
+	else{
+		return -1;
+	}
+}

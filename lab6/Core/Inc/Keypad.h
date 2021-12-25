@@ -10,7 +10,7 @@
 void KeyPad_INIT(void);
 void KeyPad_Manage(void);
 void KeyPad_Callouts_KeyPressNotificaton(void);
-char KeyPad_Getkey(int row, int col);
+unsigned char KeyPad_Getkey(void);
 
 #define PRESSED ((unsigned char)0)
 #define RELEASED ((unsigned char)1)

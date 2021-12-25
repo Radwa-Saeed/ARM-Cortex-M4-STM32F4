@@ -63,8 +63,8 @@ all: main-build
 main-build: Lab5_Keypad.elf secondary-outputs
 
 # Tool invocations
-Lab5_Keypad.elf: $(OBJS) $(USER_OBJS) E:\test\lab5\Lab5_Keypad\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Lab5_Keypad.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\test\lab5\Lab5_Keypad\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Lab5_Keypad.elf: $(OBJS) $(USER_OBJS) J:\4th\valeo\labs\New\ folder\C-Programming\lab5\Lab5_Keypad\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Lab5_Keypad.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"J:\4th\valeo\labs\New folder\C-Programming\lab5\Lab5_Keypad\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
