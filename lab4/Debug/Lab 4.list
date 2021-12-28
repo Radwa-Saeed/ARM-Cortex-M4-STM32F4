@@ -105,7 +105,7 @@ int main(void) {
  80001f4:	2b06      	cmp	r3, #6
  80001f6:	ddf3      	ble.n	80001e0 <main+0xc>
 	}
-	// 7 seg lookup table
+	// 7 SEG lookup table
 	unsigned char sevenSegHex[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66,0x6D, 0x7D, 0x07, 0x7F, 0x6F};
  80001f8:	4a1a      	ldr	r2, [pc, #104]	; (8000264 <main+0x90>)
  80001fa:	1d3b      	adds	r3, r7, #4

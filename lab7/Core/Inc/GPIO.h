@@ -36,7 +36,7 @@
 
 // #################### LAB 7 #########################
 
-// CLOCK SYS_CONFIG REGISTER (RCC = 0x4002 3800 )
+/*// CLOCK SYS_CONFIG REGISTER (RCC = 0x4002 3800 )
 # define RCC_APB2ENR 	(GPIO_REG(0x40023800,0x44))
 
 // SYS CONFIG EXTERNAL INTERRUPT REGISTERS (SYSCFG = 0x4001 3800 )
@@ -55,7 +55,7 @@
 // NVIS (0xE000E100)
 # define NVIC_ISER0	(GPIO_REG(0xE000E100 ,0x00))
 
-void EXTI_EnableClock(void);
+void EXTI_EnableClock(void);*/
 // ######################################################
 
 // Mask

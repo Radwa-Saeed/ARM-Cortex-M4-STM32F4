@@ -5,10 +5,10 @@
 unsigned int * Lookup[2][10] = {{GPIOA_MODER,GPIOA_OTYPER,GPIOA_OSPEEDR,GPIOA_PUPDR,GPIOA_IDR,GPIOA_ODR,GPIOA_BSRR,GPIOA_LCKR,GPIOA_AFRL,GPIOA_AFRH},
 								{GPIOB_MODER,GPIOB_OTYPER,GPIOB_OSPEEDR,GPIOB_PUPDR,GPIOB_IDR,GPIOB_ODR,GPIOB_BSRR,GPIOB_LCKR,GPIOB_AFRL,GPIOB_AFRH}} ;
 // ###################### LAB 7 #####################
-void EXTI_EnableClock(void)
+/*void EXTI_EnableClock(void)
 {
 	(*RCC_APB2ENR) |= (0x01 << 14); ////// WHY NOT 0X14
-}
+}*/
 
 // ####################################################
 void GPIO_EnableClock(unsigned int PortID)

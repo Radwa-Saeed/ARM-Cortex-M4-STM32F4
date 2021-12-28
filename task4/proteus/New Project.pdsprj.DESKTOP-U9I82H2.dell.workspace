@@ -883,19 +883,19 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="258" x="868" flags="00000008" y="980" h="216" pid="103" iid="2">
+   <POPUP w="30" x="868" flags="00000008" y="980" h="13" pid="103" iid="2">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="320" x="888" flags="0000000b" y="790" h="240" pid="105" iid="2">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="194" x="908" flags="00000008" y="1012" h="281" pid="3701" iid="2">
+   <POPUP w="22" x="908" flags="00000008" y="1012" h="18" pid="3701" iid="2">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="194" x="928" flags="00000008" y="1012" h="281" pid="3801" iid="2">
+   <POPUP w="22" x="928" flags="00000008" y="1012" h="18" pid="3801" iid="2">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="194" x="948" flags="00000008" y="1012" h="281" pid="3901" iid="2">
+   <POPUP w="22" x="948" flags="00000008" y="1012" h="18" pid="3901" iid="2">
     <PROPERTIES/>
    </POPUP>
   </PWI>

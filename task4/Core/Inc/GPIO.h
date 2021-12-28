@@ -34,32 +34,6 @@
 #define GPIOB_AFRL 		(GPIO_REG(0x40020400,0x20))
 #define GPIOB_AFRH 		(GPIO_REG(0x40020400,0x24))
 
-// #################### LAB 7 #########################
-
-// CLOCK SYS_CONFIG REGISTER (RCC = 0x4002 3800 )
-# define RCC_APB2ENR 	(GPIO_REG(0x40023800,0x44))
-
-// SYS CONFIG EXTERNAL INTERRUPT REGISTERS (SYSCFG = 0x4001 3800 )
-# define SYSCFG_EXTICR1 (GPIO_REG(0x40013800,0x08))
-# define SYSCFG_EXTICR2 (GPIO_REG(0x40013800,0x0C))
-# define SYSCFG_EXTICR3 (GPIO_REG(0x40013800,0x10))
-# define SYSCFG_EXTICR4 (GPIO_REG(0x40013800,0x14))
-
-// EXT INT REGISTERS (EXTI = 0x4001 3C00)
-# define EXTI_IMR 	(GPIO_REG(0x40013C00 ,0x00))
-# define EXTI_EMR 	(GPIO_REG(0x40013C00 ,0x04))
-# define EXTI_RTSR 	(GPIO_REG(0x40013C00 ,0x08))
-# define EXTI_FTSR 	(GPIO_REG(0x40013C00 ,0x0C))
-# define EXTI_SWIER (GPIO_REG(0x40013C00 ,0x10))
-# define EXTI_PR 	(GPIO_REG(0x40013C00 ,0x14))
-// NVIS (0xE000E100)
-# define NVIC_ISER0	(GPIO_REG(0xE000E100 ,0x00))
-
-void EXTI_EnableClock(void);
-
-void EXTI_PORT_Enable(unsigned int EXTI_NUM,unsigned int PortID);
-// ######################################################
-
 // Mask
 #define _OUTTYPE_MASK ((unsigned char)0x01)
 #define _OUTTYPE_SHIFT 0

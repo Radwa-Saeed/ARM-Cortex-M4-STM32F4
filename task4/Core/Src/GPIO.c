@@ -4,18 +4,7 @@
 
 unsigned int * Lookup[2][10] = {{GPIOA_MODER,GPIOA_OTYPER,GPIOA_OSPEEDR,GPIOA_PUPDR,GPIOA_IDR,GPIOA_ODR,GPIOA_BSRR,GPIOA_LCKR,GPIOA_AFRL,GPIOA_AFRH},
 								{GPIOB_MODER,GPIOB_OTYPER,GPIOB_OSPEEDR,GPIOB_PUPDR,GPIOB_IDR,GPIOB_ODR,GPIOB_BSRR,GPIOB_LCKR,GPIOB_AFRL,GPIOB_AFRH}} ;
-// ###################### LAB 7 #####################
-unsigned int * Exti[4]={SYSCFG_EXTICR1,SYSCFG_EXTICR2,SYSCFG_EXTICR3,SYSCFG_EXTICR4};
-void EXTI_EnableClock(void)
-{
-	(*RCC_APB2ENR) |= (0x01 << 14); ////// WHY NOT 0X14
-}
 
-void EXTI_PORT_Enable(unsigned int EXTI_NUM,unsigned int PortID){
-	(*SYSCFG_EXTICR1) &=(0x00 << 0x00);
-}
-
-// ####################################################
 void GPIO_EnableClock(unsigned int PortID)
 {
 	*RCC_AHB1ENR |= (0x01 << PortID);

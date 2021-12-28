@@ -150,7 +150,8 @@ g_pfnVectors:
   .word     FLASH_IRQHandler                  /* FLASH                        */                                          
   .word     RCC_IRQHandler                    /* RCC                          */                                            
 //  .word     EXTI0_IRQHandler                  /* EXTI Line0                   */
-  .word     Toggle_Led_ISR                  /* EXTI Line0                   */
+  .word     Inc_ISR                /* EXTI Line1                   */
+  .word     Dec_ISR                /* EXTI Line1                   */
   .word     EXTI1_IRQHandler                  /* EXTI Line1                   */                          
   .word     EXTI2_IRQHandler                  /* EXTI Line2                   */                          
   .word     EXTI3_IRQHandler                  /* EXTI Line3                   */                          

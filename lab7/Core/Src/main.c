@@ -4,17 +4,19 @@
  * Version: 1.0.0
  */
 #include "GPIO.h"
+#include "EXTI.h"
 
 void Toggle_Led_ISR(void);  // Called only in startup file
 void Led_Button_INIT(void);
 
 int main(void) {
 	EXTI_EnableClock(); 					// ENABLE EXTERNAL INTERRUPT CLOCK CONFIG
-	(*SYSCFG_EXTICR1) &=(0x00 << 0x00); 	//  PORT A as source input for the EXTI0 (bin 0)
+	/*(*SYSCFG_EXTICR1) &=(0x00 << 0x00); 	//  PORT A as source input for the EXTI0 (bin 0)
 	(*EXTI_IMR) |=(0x01 << 0x00); 			// Interrupt request from line 0 is not masked
 	(*EXTI_FTSR) |=(0x01 << 0x00); 			//  Falling trigger selection register
-	(*NVIC_ISER0) = (0x01 << 0x06);
-
+	(*NVIC_ISER0) = (0x01 << 0x06);*/
+	//EXIT_INIT(Port, EXTx, state)
+	EXIT_INIT(0, 0, FALLING);
 	Led_Button_INIT();
 
   while(1){

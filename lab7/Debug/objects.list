@@ -1,3 +1,4 @@
+"./Core/Src/EXTI.o"
 "./Core/Src/GPIO.o"
 "./Core/Src/main.o"
 "./Core/Src/system_stm32f4xx.o"

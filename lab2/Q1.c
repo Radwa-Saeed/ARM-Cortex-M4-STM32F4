@@ -45,5 +45,6 @@ int main()
         printf(">>SORRY, COULDN'T UNDERSTAND YOUR INPUT");
         break;
     }
+    getchar();
     return 0;
 }

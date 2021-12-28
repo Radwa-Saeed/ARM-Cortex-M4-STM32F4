@@ -8,7 +8,7 @@ int main(void) {
 	for(int i=0;i<7;i++){
 		GPIO_Init('A', i, OUTPUT, PUSH_PULL);
 	}
-	// 7 seg lookup table
+	// 7 SEG lookup table
 	unsigned char sevenSegHex[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66,0x6D, 0x7D, 0x07, 0x7F, 0x6F};
 	while (1) {
 		// counter from 0 to 9
