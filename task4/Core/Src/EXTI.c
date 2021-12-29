@@ -2,7 +2,7 @@
  * EXTI.c
  *
  *  Created on: Dec 29, 2021
- *      Author: Dalia_Lotfy
+ *      Author: Radwa_Saeed
  */
 #include "EXTI.h"
 
