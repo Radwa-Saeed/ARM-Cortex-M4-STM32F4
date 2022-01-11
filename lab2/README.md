@@ -1,3 +1,4 @@
+# Statement
 1- Write a program to perform a generic rotate right and rotate left expression using bit masking.
 The code shall ask the user to enter an 8 bit number x, number of rotate cycles n and rotate
 option o. The software shall print the rotate value of x, n times based on the value of o.<br/>
