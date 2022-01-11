@@ -1,12 +1,12 @@
 #include "stm32f401cc_interface.h"
 int main(void) {
-	RCC_AHB1ENR |= (1 << 1); // Enable PORT B
-	//GPIOB_MODER&=~(3<<6); // Config PORT B PIN 3 as I/P (DEFAULT)
-	GPIOB_MODER |= (0x01 << 10); // Config PORT B PIN 5 as O/P
-	GPIOB_MODER |= (0x01 << 12); // Config PORT B PIN 6 as O/P
-	GPIOB_MODER |= (0x01 << 14); // Config PORT B PIN 7 as O/P
-	//GPIOB_OTYPER&=~(1<<5); // Config O/P as Push-Pull (DEFAULT)
-	GPIOB_PUPDR |= (0x01 << 6); // Config I/P as Pull-Up Res
+	RCC_AHB1ENR |= (1 << 1); 		// Enable PORT B
+	//GPIOB_MODER&=~(3<<6); 		// Config PORT B PIN 3 as I/P (DEFAULT)
+	GPIOB_MODER |= (0x01 << 10); 	// Config PORT B PIN 5 as O/P
+	GPIOB_MODER |= (0x01 << 12); 	// Config PORT B PIN 6 as O/P
+	GPIOB_MODER |= (0x01 << 14); 	// Config PORT B PIN 7 as O/P
+	//GPIOB_OTYPER&=~(1<<5); 		// Config O/P as Push-Pull (DEFAULT)
+	GPIOB_PUPDR |= (0x01 << 6); 	// Config I/P as Pull-Up Res
 	int delay = 0;
 	int colors = 0;
 	while (1) {

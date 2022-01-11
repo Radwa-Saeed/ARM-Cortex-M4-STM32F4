@@ -4,8 +4,7 @@
 #include "GPIO.h"
 #include "stm32f401xc.h"
 #include "stm32f401cc_interface.h"
-void GPIO_Init(char Port, unsigned int PIN_NO, unsigned int PIN_Dir,
-		unsigned int Default_State) {
+void GPIO_Init(char Port, unsigned int PIN_NO, unsigned int PIN_Dir,unsigned int Default_State) {
 	//enable clock of port
 	switch (Port) {
 	case ('A'):
@@ -131,9 +130,9 @@ unsigned char GPIO_ReadPin(char Port, unsigned int PIN_NO) {
 	case 'B':
 		if ((GPIOB_MODER & (0x01 << 2 * PIN_NO)) >> (2 * PIN_NO) == 0) {
 			if ((GPIOB_IDR & (0x01 << PIN_NO)) >> PIN_NO == 1) {
-				result = NOK;
+				result = NOK; //1
 			} else {
-				result = OK;
+				result = OK; //0
 			}
 		}
 		break;

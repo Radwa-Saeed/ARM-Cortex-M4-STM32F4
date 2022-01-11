@@ -35,4 +35,3 @@ void TRANSMITTER_PIN_INIT (void){
 	GPIO_Init(0, 2, ALTERNATE_FUN, PUSH_PULL);
 	(*GPIOA_AFRL) |=0x07 <<8; // Alternate Function to USART2 ON AF7
 }
-

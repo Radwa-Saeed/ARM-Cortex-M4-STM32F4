@@ -1,7 +1,6 @@
 #include "GPIO.h"
 #include "stm32f401xc.h"
 #include "stm32f401cc_interface.h"
-//TURN OFF ALL LEDS RGB
 
 int main(void) {
 	//CONFIGURING INPUT/OUTPUT PINS AND MODES
@@ -17,56 +16,9 @@ int main(void) {
 			}
 			if (GPIO_ReadPin('B', 3) == OK) { //check if the button is Pressed
 				colors += 1;
-				switch (colors) {
-				case 1: {
-					GPIO_WritePin('B', 5, 1);
-					GPIO_WritePin('B', 6, 0);
-					GPIO_WritePin('B', 7, 0);
-					break;
-				}
-				case 2: {
-					GPIO_WritePin('B', 5, 0);
-					GPIO_WritePin('B', 6, 1);
-					GPIO_WritePin('B', 7, 0);
-					break;
-				}
-				case 3: {
-					GPIO_WritePin('B', 5, 1);
-					GPIO_WritePin('B', 6, 1);
-					GPIO_WritePin('B', 7, 0);
-					break;
-				}
-				case 4: {
-					GPIO_WritePin('B', 5, 0);
-					GPIO_WritePin('B', 6, 0);
-					GPIO_WritePin('B', 7, 1);
-					break;
-				}
-				case 5: {
-					GPIO_WritePin('B', 5, 1);
-					GPIO_WritePin('B', 6, 0);
-					GPIO_WritePin('B', 7, 1);
-					break;
-				}
-				case 6: {
-					GPIO_WritePin('B', 5, 0);
-					GPIO_WritePin('B', 6, 1);
-					GPIO_WritePin('B', 7, 1);
-					break;
-				}
-				case 7: {
-					GPIO_WritePin('B', 5, 1);
-					GPIO_WritePin('B', 6, 1);
-					GPIO_WritePin('B', 7, 1);
-					break;
-				}
-				case 8: {
-					GPIO_WritePin('B', 5, 0);
-					GPIO_WritePin('B', 6, 0);
-					GPIO_WritePin('B', 7, 0);
-					colors = 0;
-				}
-				}
+				GPIO_WritePin('B', 5, colors&1);
+				GPIO_WritePin('B', 6, (colors>>1)&1);
+				GPIO_WritePin('B', 7, (colors>>2)&1);
 			}
 		}
 	}
