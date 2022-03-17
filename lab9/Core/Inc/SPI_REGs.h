@@ -1,0 +1,13 @@
+#ifndef SPI_REGS_H
+#define SPI_REGS_H
+#include "Util.h"
+
+
+#define SPI1_BASE_ADDR 0x40013000
+#define SPI1_CR1 DEF_REG(SPI1_BASE_ADDR, 0x00)
+#define SPI1_CR2 DEF_REG(SPI1_BASE_ADDR, 0x04)
+#define SPI1_SR DEF_REG(SPI1_BASE_ADDR, 0x08)
+#define SPI1_DR DEF_REG(SPI1_BASE_ADDR, 0x0C)
+
+
+#endif /* SPI_REGS_H */
